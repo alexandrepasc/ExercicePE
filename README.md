@@ -15,3 +15,14 @@ https://github.com/mozilla/geckodriver/releases <br>
 <br>
 ChromeDriver 75.0.3770.90 <br>
 https://chromedriver.storage.googleapis.com/index.html?path=75.0.3770.90/ <br>
+<br><br>
+<h3>Parameters</h3><br>
+If none of the parameters are passed, by default it will run with Firefox and NO gui (headless). <br>
+<br>
+<b>browser:</b> firefox/chrome <br>
+<b>gui:</b> yes/no <br>
+<br>
+Examples <br>
+mvn clean install -Dbrowser=chrome <br>
+mvn clean install -Dgui=yes <br>
+mvn clean install -browser=chrome -Dgui=yes <br>
