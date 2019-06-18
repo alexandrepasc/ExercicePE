@@ -1,10 +1,6 @@
 package com.exercicepe.common;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 public class Elements {
 
@@ -74,7 +70,7 @@ public class Elements {
     }
   }
 
-  public static boolean elementClick(By by) {
+  public static boolean click(By by) {
     try {
 
       getElement(by).click();
@@ -95,7 +91,7 @@ public class Elements {
     }
   }
 
-  public static boolean elementClick(By by, int numb) {
+  public static boolean click(By by, int numb) {
     try {
 
       getElements(by)[numb].click();
@@ -116,7 +112,7 @@ public class Elements {
     }
   }
 
-  public static boolean elementSendKeys(By by, String text) {
+  public static boolean sendKeys(By by, String text) {
     try {
 
       getElement(by).sendKeys(text);
@@ -132,7 +128,7 @@ public class Elements {
     }
   }
 
-  public static boolean elementSendKeys(By by, int text) {
+  public static boolean sendKeys(By by, int text) {
     try {
 
       getElement(by).sendKeys(Integer.toString(text));
@@ -148,7 +144,7 @@ public class Elements {
     }
   }
 
-  public static boolean elementSendKeys(By by, String text, int numb) {
+  public static boolean sendKeys(By by, String text, int numb) {
     try {
 
       getElements(by)[numb].sendKeys(text);
@@ -164,7 +160,7 @@ public class Elements {
     }
   }
 
-  public static boolean elementSendKeys(By by, int text, int numb) {
+  public static boolean sendKeys(By by, int text, int numb) {
     try {
 
       getElements(by)[numb].sendKeys(Integer.toString(text));
@@ -239,6 +235,62 @@ public class Elements {
       e.printStackTrace();
       return null;
 
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  public static String getCssValue(By by, String value) {
+
+    try {
+
+      return getElement(by).getCssValue(value);
+
+    } catch (StaleElementReferenceException e) {
+      e.printStackTrace();
+      return null;
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  public static String getCssValue(By by, String value, int numb) {
+
+    try {
+
+      return getElements(by)[numb].getCssValue(value);
+
+    } catch (StaleElementReferenceException e) {
+      e.printStackTrace();
+      return null;
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  public static Point getLocation(By by) {
+
+    try {
+
+      return getElement(by).getLocation();
+
+    } catch (StaleElementReferenceException e) {
+      e.printStackTrace();
+      return null;
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  public static Point getLocation(By by, int numb) {
+
+    try {
+
+      return getElements(by)[numb].getLocation();
+
+    } catch (StaleElementReferenceException e) {
+      e.printStackTrace();
+      return null;
     } catch (Exception e) {
       return null;
     }
