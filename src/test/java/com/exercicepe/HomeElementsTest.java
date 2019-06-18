@@ -41,6 +41,8 @@ public class HomeElementsTest extends PreTest {
 
     Assert.assertTrue(element.checkElement(HomePage.butReservedArea), ErrorText.ELEMENT.getText());
 
+    //System.out.println(element.getText(HomePage.butReservedArea));
+    //System.out.println(Translations.butReservedArea(element));
     Assert.assertTrue(element.getText(HomePage.butReservedArea).contains(Translations.butReservedArea(element)),
         ErrorText.VALUE.getText());
   }
