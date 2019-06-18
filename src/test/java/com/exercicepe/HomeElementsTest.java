@@ -16,6 +16,9 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class HomeElementsTest extends PreTest {
 
   @Parameters({ "browser", "gui" })
@@ -57,6 +60,22 @@ public class HomeElementsTest extends PreTest {
 
     Assert.assertEquals(location.x, 1029, ErrorText.VALUE.getText());
     Assert.assertEquals(location.y, 13, ErrorText.VALUE.getText());
+  }
+
+  @Test(enabled = true, invocationCount = 1)
+  public void loginUrlTest()
+    throws Exception {
+
+    Elements element = new Elements(driver);
+
+    URL url = new URL(element.getAttribute(HomePage.linkReservedArea, "href"));
+
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+    conn.setRequestMethod("GET");
+    conn.connect();
+
+    Assert.assertEquals(conn.getResponseCode(), 200, ErrorText.VALUE.getText());
   }
 
   @AfterMethod(alwaysRun = true)
