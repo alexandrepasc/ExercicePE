@@ -31,4 +31,43 @@ public class Translations {
         return null;
     }
   }
+
+  public static String labelReservedAreaTitle(Elements element)
+    throws Exception {
+
+    switch (getLanguage(element)) {
+      case PT:
+        return "ÁREA RESERVADA";
+      case EN:
+        return "RESERVED AREA";
+      default:
+        return null;
+    }
+  }
+
+  public static String labelRecoveryPasswordTitle(Elements element)
+    throws Exception {
+
+    switch (getLanguage(element)) {
+      case PT:
+        return "RECUPERAR PALAVRA-PASSE";
+      case EN:
+        return "RECOVER PASSWORD";
+      default:
+        return null;
+    }
+  }
+
+  public static String labelRegisterTitle(Elements element)
+    throws Exception {
+
+    switch (getLanguage(element)) {
+      case PT:
+        return "REGISTO";
+      case EN:
+        return "REGISTRATION";
+      default:
+        return null;
+    }
+  }
 }
