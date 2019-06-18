@@ -11,6 +11,10 @@
 *.iml
 .idea
 
+target
+build
+test-output
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
