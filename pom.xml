@@ -11,6 +11,7 @@
     <name>Exercise PE</name>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>3.141.59</selenium.version>
         <testng.version>6.14.3</testng.version>
     </properties>

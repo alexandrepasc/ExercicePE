@@ -27,7 +27,7 @@ public class CheckConnectivityTest extends PreTest {
   public void connectivityTest()
     throws Exception {
 
-    URL url = new URL(Utils.getUrl());
+    URL url = new URL(Utils.getHomeUrl());
     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
     conn.setRequestMethod("GET");
