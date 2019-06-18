@@ -13,13 +13,13 @@ import java.util.concurrent.TimeUnit;
 public class PreTest {
   public static WebDriver driver;
 
-  public static void beforeTest(String browser) {
+  public static void beforeTest(String browser, String gui) {
     switch (browser) {
       case "firefox":
-        firefox();
+        firefox(gui);
         break;
-      case "firefox-headless":
-        firefoxHeadless();
+      case "chrome":
+        chrome(gui);
         break;
     }
 
@@ -28,9 +28,16 @@ public class PreTest {
     driver.manage().window().setSize(new Dimension(1280, 960));
   }
 
-  static void firefox() {
+  static void firefox(String gui) {
 
-    driver = new FirefoxDriver();
+    switch (gui) {
+      case "yes":
+        driver = new FirefoxDriver();
+        break;
+      case "no":
+        firefoxHeadless();
+        break;
+    }
   }
 
   public static void firefoxHeadless() {
@@ -43,14 +50,28 @@ public class PreTest {
     driver = new FirefoxDriver(firefoxOptions);
   }
 
-  static void chrome() {
+  static void chrome(String gui) {
 
-    driver = new ChromeDriver();
+    switch (gui) {
+      case "yes":
+        driver = new ChromeDriver();
+        break;
+      case "no":
+        chromeHeadless();
+        break;
+    }
   }
 
   public static void chromeHeadless() {
 
     ChromeOptions chromeOptions = new ChromeOptions();
     chromeOptions.addArguments("--headless");
+
+    driver = new ChromeDriver(chromeOptions);
+  }
+
+  public static void afterTest() {
+    //driver.close();
+    driver.quit();
   }
 }

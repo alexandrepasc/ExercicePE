@@ -15,3 +15,7 @@ https://github.com/mozilla/geckodriver/releases <br>
 <br>
 ChromeDriver 75.0.3770.90 <br>
 https://chromedriver.storage.googleapis.com/index.html?path=75.0.3770.90/ <br>
+<br><br>
+<h3>Parameters</h3><br>
+browser: firefox/chrome <br>
+gui: yes/no <br>

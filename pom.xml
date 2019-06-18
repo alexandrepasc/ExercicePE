@@ -41,7 +41,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <systemPropertyVariables>
-                        <environment>${browser}</environment>
+                        <browser>${browser}</browser>
+                        <gui>${gui}</gui>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
