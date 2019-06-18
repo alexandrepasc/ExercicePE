@@ -1,4 +1,4 @@
-package common;
+package com.exercicepe.common;
 
 public enum ErrorText {
 

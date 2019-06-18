@@ -1,4 +1,4 @@
-package common;
+package com.exercicepe.common;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;

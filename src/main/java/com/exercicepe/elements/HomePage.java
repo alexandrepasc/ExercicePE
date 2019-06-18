@@ -1,4 +1,4 @@
-package elements;
+package com.exercicepe.elements;
 
 import org.openqa.selenium.By;
 
