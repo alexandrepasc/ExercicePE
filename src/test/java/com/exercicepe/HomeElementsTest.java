@@ -63,7 +63,7 @@ public class HomeElementsTest extends PreTest {
   }
 
   @Test(enabled = true, invocationCount = 1)
-  public void loginUrlTest()
+  public void reservedAreaUrlTest()
     throws Exception {
 
     Elements element = new Elements(driver);
@@ -76,6 +76,17 @@ public class HomeElementsTest extends PreTest {
     conn.connect();
 
     Assert.assertEquals(conn.getResponseCode(), 200, ErrorText.VALUE.getText());
+  }
+
+  @Test(enabled = true, invocationCount = 1)
+  public void reservedAreaClickTest()
+    throws Exception {
+
+    Elements element = new Elements(driver);
+
+    element.click(HomePage.butReservedArea);
+
+    Assert.assertEquals(driver.getCurrentUrl(), Utils.getLoginUrl(), ErrorText.PAGE.getText());
   }
 
   @AfterMethod(alwaysRun = true)
