@@ -180,6 +180,70 @@ public class Elements {
     }
   }
 
+  public static boolean clear(By by) {
+    try {
+
+      getElement(by).clear();
+
+      return true;
+
+    } catch (StaleElementReferenceException e) {
+
+      e.printStackTrace();
+      return false;
+
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
+  public static boolean clear(By by, int numb) {
+    try {
+
+      getElements(by)[numb].clear();
+
+      return true;
+
+    } catch (StaleElementReferenceException e) {
+
+      e.printStackTrace();
+      return false;
+
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
+  public static String getAttribute(By by, String attribute) {
+    try {
+
+      return getElement(by).getAttribute(attribute);
+
+    } catch (StaleElementReferenceException e) {
+
+      e.printStackTrace();
+      return null;
+
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  public static String getAttribute(By by, String attribute, int numb) {
+    try {
+
+      return getElements(by)[numb].getAttribute(attribute);
+
+    } catch (StaleElementReferenceException e) {
+
+      e.printStackTrace();
+      return null;
+
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
   public static boolean isVisible(By by) {
     try {
 
