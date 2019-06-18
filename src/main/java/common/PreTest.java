@@ -11,46 +11,46 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.util.concurrent.TimeUnit;
 
 public class PreTest {
-    public static WebDriver driver;
+  public static WebDriver driver;
 
-    public static void beforeTest(String browser) {
-        switch (browser) {
-            case "firefox":
-                firefox();
-                break;
-            case "firefox-headless":
-                firefoxHeadless();
-                break;
-        }
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-        driver.manage().window().setSize(new Dimension(1280, 960));
+  public static void beforeTest(String browser) {
+    switch (browser) {
+      case "firefox":
+        firefox();
+        break;
+      case "firefox-headless":
+        firefoxHeadless();
+        break;
     }
 
-    static void firefox() {
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+    driver.manage().window().setSize(new Dimension(1280, 960));
+  }
 
-        driver = new FirefoxDriver();
-    }
+  static void firefox() {
 
-    public static void firefoxHeadless() {
+    driver = new FirefoxDriver();
+  }
 
-        FirefoxBinary firefoxBinary = new FirefoxBinary();
-        firefoxBinary.addCommandLineOptions("--headless");
-        FirefoxOptions firefoxOptions = new FirefoxOptions();
-        firefoxOptions.setBinary(firefoxBinary);
+  public static void firefoxHeadless() {
 
-        driver = new FirefoxDriver(firefoxOptions);
-    }
+    FirefoxBinary firefoxBinary = new FirefoxBinary();
+    firefoxBinary.addCommandLineOptions("--headless");
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    firefoxOptions.setBinary(firefoxBinary);
 
-    static void chrome() {
+    driver = new FirefoxDriver(firefoxOptions);
+  }
 
-        driver = new ChromeDriver();
-    }
+  static void chrome() {
 
-    public static void chromeHeadless() {
+    driver = new ChromeDriver();
+  }
 
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-    }
+  public static void chromeHeadless() {
+
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.addArguments("--headless");
+  }
 }
