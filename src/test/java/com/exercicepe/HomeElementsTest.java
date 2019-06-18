@@ -6,6 +6,9 @@ import com.exercicepe.common.PreTest;
 import com.exercicepe.common.Translations;
 import com.exercicepe.common.Utils;
 import com.exercicepe.elements.HomePage;
+
+import org.openqa.selenium.Point;
+import org.openqa.selenium.support.Color;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -37,6 +40,23 @@ public class HomeElementsTest extends PreTest {
 
     Assert.assertTrue(element.getText(HomePage.butReservedArea).contains(Translations.butReservedArea(element)),
         ErrorText.VALUE.getText());
+  }
+
+  @Test(enabled = true, invocationCount = 1)
+  public void reservedAreaStyleTest()
+    throws Exception {
+
+    Elements element = new Elements(driver);
+
+    //    Assert.assertEquals(element.getCssValue(HomePage.butReservedArea, "color"), "rgb(147, 193, 62)",
+    //        ErrorText.VALUE.getText());
+    Assert.assertEquals(Color.fromString(element.getCssValue(HomePage.butReservedArea, "color")).asHex(), "#93c13e",
+        ErrorText.VALUE.getText());
+
+    Point location = element.getLocation(HomePage.butReservedArea);
+
+    Assert.assertEquals(location.x, 1029, ErrorText.VALUE.getText());
+    Assert.assertEquals(location.y, 13, ErrorText.VALUE.getText());
   }
 
   @AfterMethod(alwaysRun = true)
