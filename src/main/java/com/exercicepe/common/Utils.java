@@ -39,6 +39,11 @@ public class Utils {
     return "https://autenticacao.gov.pt/fa/CitizenConsent.aspx?RequestId";
   }
 
+  public static String getGovBannerUrl() {
+
+    return "Autenticação.gov.pt";
+  }
+
   public static String getAtLoginUrl() {
 
     return "https://www.acesso.gov.pt/jsp/loginRedirectForm.jsp";

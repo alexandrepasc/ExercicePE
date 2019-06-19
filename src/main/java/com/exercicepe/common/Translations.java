@@ -79,13 +79,13 @@ public class Translations {
         return "Campo em falta/incorreto";
       case EN:
         return null;
-        default:
-          return null;
+      default:
+        return null;
     }
   }
 
   public static String labelLoginPasswordFeedback(Elements element)
-      throws Exception {
+    throws Exception {
 
     switch (getLanguage(element)) {
       case PT:

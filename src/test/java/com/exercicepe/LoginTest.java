@@ -42,7 +42,7 @@ public class LoginTest extends PreTest {
 
     Assert.assertTrue(element.checkElement(LoginPage.imgGovHeader), ErrorText.ELEMENT.getText());
 
-    Assert.assertEquals(element.getAttribute(LoginPage.imgGovHeader, "alt"), "Autenticação.gov.pt",
+    Assert.assertEquals(element.getAttribute(LoginPage.imgGovHeader, "alt"), Utils.getGovBannerUrl(),
         ErrorText.VALUE.getText());
   }
 
