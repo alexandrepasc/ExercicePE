@@ -6,6 +6,8 @@ public class LoginPage {
 
   public static By labelTitle = By.cssSelector("#adene-login > div > h2");
 
+  public static By labelLoginTitle = By.cssSelector("#auth-card > div > div.sc-kAzzGY.bNvMpU > h3");
+
   public static By inputMail = By
       .cssSelector("#auth-card > div > div.sc-kAzzGY.bNvMpU > div:nth-child(3) > label > input");
 
