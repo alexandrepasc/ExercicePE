@@ -1,5 +1,10 @@
 # ExercicePE
 
+
+For tests the user test1 was created. <br>
+login: test1@mail.com <br>
+pwd: 123qweasd <br>
+<br><br>
 Java 8u211 <br>
 https://www.java.com/pt_BR/download/ <br>
 <br>
