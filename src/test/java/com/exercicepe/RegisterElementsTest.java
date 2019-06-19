@@ -108,7 +108,7 @@ public class RegisterElementsTest extends PreTest {
 
     Elements element = new Elements(driver);
 
-    element.click(LoginPage.butATAuth);
+    element.click(RegisterPage.butAt);
 
     Assert.assertEquals(driver.getCurrentUrl(), Utils.getAtLoginUrl(), ErrorText.VALUE.getText());
   }
@@ -169,12 +169,20 @@ public class RegisterElementsTest extends PreTest {
         Translations.labelRegisterNameFeedback(element), ErrorText.VALUE.getText());
 
     Assert.assertTrue(element.checkElement(RegisterPage.labelEmailFeedback), ErrorText.ELEMENT.getText());
+    Assert.assertEquals(element.getText(RegisterPage.labelEmailFeedback),
+        Translations.labelRegisterMailFeedback(element), ErrorText.VALUE.getText());
 
     Assert.assertTrue(element.checkElement(RegisterPage.labelPasswordFeedback), ErrorText.ELEMENT.getText());
+    Assert.assertEquals(element.getText(RegisterPage.labelPasswordFeedback),
+        Translations.labelRegisterPasswordFeedback(element), ErrorText.VALUE.getText());
 
     Assert.assertTrue(element.checkElement(RegisterPage.labelNifFeedback), ErrorText.ELEMENT.getText());
+    Assert.assertEquals(element.getText(RegisterPage.labelNifFeedback),
+        Translations.labelRegisterNifFeedback(element), ErrorText.VALUE.getText());
 
     Assert.assertTrue(element.checkElement(RegisterPage.labelBirthFeedback), ErrorText.ELEMENT.getText());
+    Assert.assertEquals(element.getText(RegisterPage.labelBirthFeedback),
+        Translations.labelRegisterBirthFeedback(element), ErrorText.VALUE.getText());
   }
 
   @AfterMethod(alwaysRun = true)
