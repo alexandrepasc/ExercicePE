@@ -1,5 +1,10 @@
 # ExercicePE
 
+
+For tests the user test1 was created. <br>
+login: test1@mail.com <br>
+pwd: 123qweasd <br>
+<br><br>
 Java 8u211 <br>
 https://www.java.com/pt_BR/download/ <br>
 <br>
@@ -26,3 +31,11 @@ Examples <br>
 mvn clean install -Dbrowser=chrome <br>
 mvn clean install -Dgui=yes <br>
 mvn clean install -browser=chrome -Dgui=yes <br>
+<br><br>
+<h3>Run Test or Suite</h3><br>
+<b>Run Suite (class):</b> <br>
+mvn clean install -Dtest=className <br>
+<b>Run Test (method):</b> <br>
+mvn clean install -Dtest=className#methodName <br>
+<b>Just compile and run no tests:</b> <br>
+mvn clean install -DskipTests <br>
