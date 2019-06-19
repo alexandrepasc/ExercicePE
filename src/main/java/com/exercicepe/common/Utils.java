@@ -1,7 +1,9 @@
 package com.exercicepe.common;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,6 +24,12 @@ public class Utils {
         wait.until(ExpectedConditions.elementToBeClickable(by));
         break;
     }
+  }
+
+  public static void scrollToElement(WebDriver driver, WebElement element)
+    throws Exception {
+
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
   }
 
   public static String getHomeUrl() {
