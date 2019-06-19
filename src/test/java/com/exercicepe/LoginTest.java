@@ -42,7 +42,7 @@ public class LoginTest extends PreTest {
 
     Assert.assertTrue(element.checkElement(LoginPage.imgGovHeader), ErrorText.ELEMENT.getText());
 
-    Assert.assertEquals(element.getAttribute(LoginPage.imgGovHeader, "alt"), "Autenticação.gov.pt",
+    Assert.assertEquals(element.getAttribute(LoginPage.imgGovHeader, "alt"), Utils.getGovBannerUrl(),
         ErrorText.VALUE.getText());
   }
 
@@ -57,6 +57,7 @@ public class LoginTest extends PreTest {
     Assert.assertEquals(driver.getCurrentUrl(), Utils.getAtLoginUrl(), ErrorText.VALUE.getText());
   }
 
+  //TODO The test LoginTest.failNoInputLoginTest some times fail, also needs to be checked.
   @Test(enabled = true, invocationCount = 1)
   public void failNoInputLoginTest()
     throws Exception {

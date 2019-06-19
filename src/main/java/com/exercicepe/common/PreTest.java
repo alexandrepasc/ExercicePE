@@ -25,7 +25,7 @@ public class PreTest {
 
     driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-    driver.manage().window().setSize(new Dimension(1280, 960));
+    driver.manage().window().setSize(new Dimension(1366, 768));
   }
 
   static void firefox(String gui) {
